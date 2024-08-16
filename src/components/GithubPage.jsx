@@ -16,9 +16,9 @@ const GithubPage = () => {
   const { display, hasMore: hashMoreRepo, loadRepo } = useGithubRepo();
 
   const loadMore = () => {
-    if (userName) {
+    if (hashMore) {
       fetchRepos(userDetail?.login);
-    } else {
+    } else if (hashMoreRepo) {
       loadRepo();
     }
   };
@@ -176,7 +176,7 @@ const GithubPage = () => {
           <div className='flex justify-center mt-10'>
             {hashMore && hashMoreRepo && (
               <button
-                disabled={loading}
+                disabled={!hashMoreRepo || !hashMore || loading}
                 onClick={loadMore}
                 className='bg-primary text-text rounded-lg p-2'>
                 {loading ? "Load..." : "Load More"}

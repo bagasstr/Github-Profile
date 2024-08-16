@@ -73,12 +73,9 @@ export function useGithubRepo() {
     const currentItems = githubRepos.slice(startIndex, endIndex);
 
     setDisplay((prev) => {
-      // Membuat Set dari id repo yang sudah ada
       const existingIds = new Set(prev.map((repo) => repo.id));
 
-      // Filter item baru yang belum ada di display
       const newItems = currentItems.filter((repo) => !existingIds.has(repo.id));
-      console.log(prev);
 
       return [...prev, ...newItems];
     });
