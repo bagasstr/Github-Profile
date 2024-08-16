@@ -1,0 +1,291 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Be Vietnam Pro", sans-serif;
+  }
+  body {
+    @apply bg-background;
+  }
+}
+@layer components {
+  /* DEFAULT SCREEN */
+  .profile-container {
+    @apply max-w-full h-full;
+  }
+  .followers,
+  .following,
+  .location {
+    @apply bg-primary flex p-2 rounded-lg w-fit;
+  }
+  hr {
+    @apply w-[2px] h-auto bg-secondary mx-2;
+  }
+  .followers .stat-title,
+  .following .stat-title,
+  .location .stat-title {
+    @apply text-secondary font-semibold;
+  }
+  .followers .stat-value,
+  .following .stat-value,
+  .location .stat-value {
+    @apply text-text;
+  }
+  .box-search {
+    @apply rounded-lg h-12 px-2 w-full flex items-center bg-background cursor-text;
+  }
+  .search {
+    @apply outline-none bg-transparent w-full h-full text-text px-3;
+  }
+
+  /* MEDIA SCREEN
+   */
+  @screen sm {
+    .profile-banner {
+      @apply w-full h-[135px];
+    }
+    .profile-banner-img {
+      @apply object-cover w-full h-full;
+    }
+    .profile-container .profile-search {
+      @apply absolute mx-[9%] w-[81%] top-8;
+    }
+
+    /* header profile */
+    .profile-info {
+      @apply max-w-md mx-[15%] absolute px-4 left-0 right-0 top-[7rem];
+    }
+    .profile-header {
+      @apply flex gap-x-4;
+    }
+    .profile-image-wrapper {
+      @apply w-[125px] h-[125px] rounded-lg overflow-hidden bg-background border-background border-[8px];
+    }
+    .profile-img {
+      @apply w-auto rounded-md;
+    }
+    .user-stats {
+      @apply flex flex-col gap-y-4 mt-[4rem];
+    }
+    .profile-details {
+      @apply mt-6;
+    }
+    .profile-details .profile-name {
+      @apply font-medium text-[32px] text-text;
+    }
+    .profile-details .profile-bio {
+      @apply text-[20px] text-secondary;
+    }
+
+    /* PROFILE REPO */
+    .profile-container .profile-repos {
+      @apply grid grid-cols-1 mx-12 mt-8 gap-y-4;
+    }
+    .profile-repos .repo-card {
+      @apply bg-gradient-to-r from-[#111629] to-[#1D1B48] rounded-lg p-2;
+    }
+    .profile-repos .repo-card .repo-title {
+      @apply text-[20px] text-text font-medium;
+    }
+    .profile-repos .repo-card .repo-description {
+      @apply text-[16px] text-secondary font-medium my-3;
+    }
+    .profile-repos .repo-card .repo-stats {
+      @apply flex items-center gap-x-3;
+    }
+    .repo-stat .license-value,
+    .repo-stat .fork-value,
+    .repo-stat .stars-value {
+      @apply font-medium text-[16px] text-text;
+    }
+    .repo-stat .updated-value {
+      @apply text-[12px] text-text;
+    }
+    .profile-repos .repo-stats .license,
+    .forks,
+    .stars {
+      @apply flex;
+    }
+  }
+  @screen md {
+    .profile-banner {
+      @apply w-full h-[180px];
+    }
+    .profile-banner-img {
+      @apply object-cover w-full h-full;
+    }
+    .profile-search {
+      @apply absolute mx-auto left-0 right-0 w-[50%] top-8;
+    }
+
+    /* header profile */
+    .profile-info {
+      @apply max-w-2xl mx-auto absolute left-0 right-0 top-[9rem];
+    }
+    .profile-header {
+      @apply flex gap-x-4;
+    }
+    .profile-image-wrapper {
+      @apply w-[125px] h-[125px] rounded-lg overflow-hidden bg-background border-background border-[8px];
+    }
+    .profile-img {
+      @apply w-auto rounded-md;
+    }
+    .user-stats {
+      @apply flex mt-[2rem] items-center gap-x-2;
+    }
+    .user-stat {
+      @apply py-3;
+    }
+    .profile-details {
+      @apply mt-6;
+    }
+    .followers .stat-title,
+    .following .stat-title,
+    .location .stat-title {
+      @apply text-[.9rem];
+    }
+    .followers .stat-value,
+    .following .stat-value,
+    .location .stat-value {
+      @apply text-[.9rem];
+    }
+    .profile-details .profile-name {
+      @apply font-medium text-[32px] text-text;
+    }
+    .profile-details .profile-bio {
+      @apply text-[20px] text-secondary;
+    }
+
+    /* PROFILE REPOS */
+    .profile-repos {
+      @apply grid grid-cols-2 mt-8 gap-y-4 gap-x-4;
+    }
+    .profile-repos .repo-card {
+      @apply bg-gradient-to-r flex flex-col justify-between from-[#111629] to-[#1D1B48] rounded-lg p-2;
+    }
+    .profile-repos .repo-card .repo-title {
+      @apply text-[20px] text-text font-medium;
+    }
+    .profile-repos .repo-card .repo-description {
+      @apply text-[16px] text-secondary font-medium my-3;
+    }
+    .profile-repos .repo-card .repo-stats {
+      @apply flex items-center gap-x-3;
+    }
+    .repo-stat .license-icon,
+    .repo-stat .fork-icon,
+    .repo-stat .stars-icon {
+      @apply w-[25px] h-[25px];
+    }
+    .repo-stat .license-value,
+    .repo-stat .fork-value,
+    .repo-stat .stars-value {
+      @apply font-medium text-[13px] text-text;
+    }
+    .repo-stat .updated-value {
+      @apply text-[12px] text-text;
+    }
+    .profile-repos .repo-stats .license,
+    .forks,
+    .stars {
+      @apply flex;
+    }
+  }
+  @screen lg {
+    .profile-banner {
+      @apply w-full h-[180px];
+    }
+    .profile-banner-img {
+      @apply object-cover w-full h-full;
+    }
+    .profile-search {
+      @apply absolute mx-auto left-0 right-0 w-[30%] top-8;
+    }
+
+    /* header profile */
+    .profile-info {
+      @apply max-w-5xl mx-auto absolute left-0 right-0 top-[9rem];
+    }
+    .profile-header {
+      @apply flex gap-x-4;
+    }
+    .profile-image-wrapper {
+      @apply w-[125px] h-[125px] rounded-lg overflow-hidden bg-background border-background border-[8px];
+    }
+    .profile-img {
+      @apply w-auto rounded-md;
+    }
+    .user-stats {
+      @apply flex mt-[2rem] items-center gap-x-5;
+    }
+    .user-stat {
+      @apply py-3;
+    }
+    .profile-details {
+      @apply mt-6;
+    }
+    .followers .stat-title,
+    .following .stat-title,
+    .location .stat-title {
+      @apply text-[1rem];
+    }
+    .followers .stat-value,
+    .following .stat-value,
+    .location .stat-value {
+      @apply text-[1rem];
+    }
+    .profile-details .profile-name {
+      @apply font-medium text-[32px] text-text;
+    }
+    .profile-details .profile-bio {
+      @apply text-[20px] text-secondary;
+    }
+
+    /* PROFILE REPOS */
+    .profile-repos {
+      @apply grid grid-cols-3 mt-8 gap-y-4 gap-x-4;
+    }
+    .profile-repos .repo-card {
+      @apply bg-gradient-to-r flex flex-col justify-between from-[#111629] to-[#1D1B48] rounded-lg p-2;
+    }
+    .profile-repos .repo-card .repo-title {
+      @apply text-[20px] text-text font-medium;
+    }
+    .profile-repos .repo-card .repo-description {
+      @apply text-[16px] text-secondary font-medium my-3;
+    }
+    .profile-repos .repo-card .repo-stats {
+      @apply flex items-center gap-x-3;
+    }
+    .profile-repos .repo-card .repo-stat {
+      @apply flex items-center;
+    }
+    .repo-stat .license-icon,
+    .repo-stat .fork-icon,
+    .repo-stat .stars-icon {
+      @apply w-[25px] h-[25px];
+    }
+    .repo-stat .license-value,
+    .repo-stat .fork-value,
+    .repo-stat .stars-value {
+      @apply font-medium text-[14px] text-text;
+    }
+    .repo-stat .updated-value {
+      @apply text-[12px] text-text;
+    }
+    .profile-repos .repo-stats .license,
+    .forks,
+    .stars {
+      @apply flex;
+    }
+  }
+}
+
+@layer utilities {
+  .outline-active {
+    @apply ring-ring ring-1;
+  }
+}
